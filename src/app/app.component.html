@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <div class="page-header">
+    <h1>Funny Password Checker</h1>
+    <p>Made by <a href="https://www.matthewquerzoli.com">Matt Querzoli</a></p>
+  </div>
+</div>
+
+<div class="container-fluid" ng-controller="PasswordInput">
+  <div class="row">
+    <div class="col-sm vertical-align">
+      <h3>Enter your password:</h3>
+    </div>
+    <div class="col-sm-4 vertical-align">
+      <div class="form-group">
+        <form class="form-horizontal" role="form">
+          <input class="form-control" type="password" ng-model="query" type="text" placeholder="Get it hard" autofocus>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm vertical-align">
+      <label>
+          <meter title="strengthMeter" min="0" max="10" value="{{strengthMeterValue}}" low="3" high="7" optimum="6"></meter>
+      </label>
+      <p>Password: {{query}}</p>
+      <p>Length: {{query.length}}</p>
+      <p>Number in List: {{reasons.length}}</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- <p ng-repeat="reasons in strengthReasons | filter: query"> -->
+      <!-- <p ng-repeat="reasons in strengthReasons | filter: customFilter(query)"> -->
+      <p *ngFor="let reasons of strengthReasons">
+        {{reasons.reason}}
+      </p>
+    </div>
+  </div>
+</div>
