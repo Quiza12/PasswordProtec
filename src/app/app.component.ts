@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { StrengthsService } from './strengths/strengths.service';
-import { StrengthReason } from './strengths/strengthReason';
 
 @Component({
   selector: 'app-root',
@@ -10,16 +9,15 @@ import { StrengthReason } from './strengths/strengthReason';
 
 export class AppComponent implements OnInit {
   title = 'app';
-  strengthReasons: StrengthReason[];
+  strengthReasons = [];
+  query = '';
 
-  constructor(private strengthsService: StrengthsService) { }
+  constructor(private strengthsService:StrengthsService) { }
 
   ngOnInit() {
-   this.getStrengthReasons();
+    this.strengthReasons = this.strengthsService.strengthReasons;
   }
 
-  getStrengthReasons(): void {
-    this.strengthsService.getStrengthReasons();
-  }
+
 
 }

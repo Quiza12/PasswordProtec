@@ -1,14 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AppComponent } from './app.component';
 import { StrengthsService } from './strengths/strengths.service';
 
-
-import { AppComponent } from './app.component';
-
+//use Angular 4 Reactive Forms
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule
