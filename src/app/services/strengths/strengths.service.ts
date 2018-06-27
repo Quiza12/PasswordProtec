@@ -15,19 +15,23 @@ export class StrengthsService {
     { reason: "Your password has a series of sequential numbers. For the love of God, fix that shit.", tag: "sequentialNumbers"},
     { reason: "Your password does not contain the winning margin of the famous 2005 AFL Grand Final.", tag: "grandFinal"},
     { reason: "Your password was not given enough love and attention while it was young to develop enough self-esteem to be strong later in life.", tag: "love"}, //to do
-    { reason: "Your password does not contain any of the script of 'Lorum Ipsum'.", tag: "lorum"}, //to do
+    { reason: "Your password does not contain any of the script of 'Lorum Ipsum'.", tag: "lorum"},
     { reason: "Your password contains zero references to Jesus, you heathen.", tag: "jesus"},
     { reason: "Your password contains racist terms. You need to check your morals more than your password.", tag: "racist"},
     { reason: "Your password is does not contain a cryptocurrency reference like BTC, and is therefore not hip enough. #HODL", tag: "crypto"},
     { reason: "Your password contains the word 'penis'. No wonder it's so insecure: it's short as.", tag: "penis"},
     { reason: "Your password does not contain a vagina. Should put one in. They're bloody (sorry) strong.", tag: "vagina"},
-    { reason: "Don't tell me your favourite number is 7? Be original. Get a new one.", tag: "seven"},
-    { reason: ".", tag: ""}
-
+    { reason: "Don't tell me your favourite number is 7? Be original. Get a new one.", tag: "seven"}
   ];
 
-  myData() {
-    return 'This is my data, man!';
+  tempReasons = [];
+
+  clearTempArray() {
+    this.tempReasons = [];
+  }
+
+  addToTempArray(reason:string) {
+    this.tempReasons.push(reason);
   }
 
 }

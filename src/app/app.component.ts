@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { StrengthsService } from './strengths/strengths.service';
+import { StrengthsService } from './services/strengths/strengths.service';
+import { PasswordService } from './services/password/password.service';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,40 @@ import { StrengthsService } from './strengths/strengths.service';
 export class AppComponent implements OnInit {
   title = 'app';
   strengthReasons = [];
-  query = '';
+  tempReasons = [];
+  password:string;
 
-  constructor(private strengthsService:StrengthsService) { }
+  constructor(private strengthsService:StrengthsService, private passwordService:PasswordService) { }
 
   ngOnInit() {
     this.strengthReasons = this.strengthsService.strengthReasons;
+    this.tempReasons = this.strengthsService.tempReasons;
   }
 
+  getReasonsForPassword() {
+    return this.strengthsService.tempReasons;
+  }
 
+  getPassword() {
+    return this.passwordService.getData();
+  }
+
+  getPasswordLength() {
+    this.password = this.passwordService.getData();
+    if ((this.passwordService.getData().length) !== undefined) {
+      return this.passwordService.getData().length;
+    } else {
+      return 0;
+    }
+  }
+
+  getTempReasonsLength() {
+    this.tempReasons = this.strengthsService.tempReasons;
+    if ((this.tempReasons.length) !== undefined) {
+      return this.tempReasons.length;
+    } else {
+      return 0;
+    }
+  }
 
 }

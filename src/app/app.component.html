@@ -12,27 +12,22 @@
     </div>
     <div class="col-sm-4 vertical-align">
       <div class="form-group">
-        <form class="form-horizontal" role="form">
-          <input class="form-control" type="password" type="text" placeholder="Get it hard" autofocus>
-          <!-- ng-model="query"  -->
-        </form>
+        <app-password-form></app-password-form>
       </div>
     </div>
     <div class="col-sm vertical-align">
       <label>
-          <meter title="strengthMeter" min="0" max="10" value="{{strengthMeterValue}}" low="3" high="7" optimum="6"></meter>
+          <meter title="strengthMeter" min="0" max="15" value="{{getPasswordLength()}}" low="4" high="12" optimum="15"></meter>
       </label>
-      <p>Password: {{query}}</p>
-      <p>Length: {{query.length}}</p>
-      <p>Number in List: {{strengthReasons.length}}</p>
+      <p>Password: {{getPassword()}}</p>
+      <p>Length: {{getPasswordLength()}}</p>
+      <p>Number in List: {{getTempReasonsLength()}}</p>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <!-- <p ng-repeat="reasons in strengthReasons | filter: query"> -->
-      <!-- <p ng-repeat="reasons in strengthReasons | filter: customFilter(query)"> -->
-      <p *ngFor="let reasons of strengthReasons">
-        {{reasons.reason}}
+      <p *ngFor="let reasons of getReasonsForPassword()">
+        {{reasons}}
       </p>
     </div>
   </div>
