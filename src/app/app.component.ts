@@ -13,12 +13,17 @@ export class AppComponent implements OnInit {
   strengthReasons = [];
   tempReasons = [];
   password:string;
+  passwordStrength:any = this.passwordService.passwordStrength;
 
   constructor(private strengthsService:StrengthsService, private passwordService:PasswordService) { }
 
   ngOnInit() {
     this.strengthReasons = this.strengthsService.strengthReasons;
     this.tempReasons = this.strengthsService.tempReasons;
+  }
+
+  getOriginalReasonsListLength() {
+    return this.strengthsService.strengthReasons.length;
   }
 
   getReasonsForPassword() {
@@ -29,10 +34,14 @@ export class AppComponent implements OnInit {
     return this.passwordService.getData();
   }
 
+  getPasswordStrength() {
+    return this.passwordService.passwordStrength;
+  }
+
   getPasswordLength() {
     this.password = this.passwordService.getData();
-    if ((this.passwordService.getData().length) !== undefined) {
-      return this.passwordService.getData().length;
+    if ((this.password.length) !== undefined) {
+      return this.password.length;
     } else {
       return 0;
     }
@@ -44,6 +53,23 @@ export class AppComponent implements OnInit {
       return this.tempReasons.length;
     } else {
       return 0;
+    }
+  }
+
+  getCharactersString() {
+    if ((this.passwordService.getData().length) == 1) {
+      return 'character';
+    } else {
+      return 'characters';
+    }
+  }
+
+  getEncouragement() {
+    this.password = this.passwordService.getData();
+    if ((this.password.length) > 0 && (this.password.length) < 4) {
+      return 'Oh hey, it\'s Equifax.';
+    } else if ((this.password.length) >= 4 && (this.password.length) < 8) {
+      return 'Better, but need to pump more iron.';
     }
   }
 

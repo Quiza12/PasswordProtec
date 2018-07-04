@@ -11,17 +11,33 @@ import { StrengthsService } from './../../services/strengths/strengths.service';
 export class PasswordFormComponent implements OnInit {
 
   password:string;
+  formType:string;
+  hideOrShowButtonTag:string;
+
 
   constructor(private strengthsService:StrengthsService, private passwordService:PasswordService) { }
 
   ngOnInit() {
     this.password = '';
+    this.formType = 'password';
+    this.hideOrShowButtonTag = 'Show';
+  }
+
+  showOrHidePassword() {
+    if (this.formType === 'text') {
+      this.formType = 'password';
+      this.hideOrShowButtonTag = 'Show';
+    } else {
+      this.formType = 'text';
+      this.hideOrShowButtonTag = 'Hide';
+    }
   }
 
   onKey(event: any) { // without type info
     this.password = event.target.value;
     this.passwordService.setData(this.password);
     this.strengthsService.clearTempArray();
+    this.passwordService.passwordStrength = 0;
     this.getReasonsForPassword();
   }
 
@@ -42,6 +58,9 @@ export class PasswordFormComponent implements OnInit {
         case 'jesus' : this.determineJesusTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'racist' : this.determineRacistTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         //case 'crypto' : return determineCryptoTag(query);
+        case 'penis' : this.determinePenisTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'vagina' : this.determineVaginaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'seven' : this.determineSevenTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
       }
     }
   }
@@ -49,48 +68,64 @@ export class PasswordFormComponent implements OnInit {
   determineLengthTag(password:string, reason:string) {
     if (password.length >= 0 && password.length <= 8) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineNumericsTag(password:string, reason:string) {
     if (!password.match(/[\d]/)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineSpecialCharsTag(password:string, reason:string) {
     if (!password.match(/[.!@#$%^&*()_+=-]/)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineUppercaseTag(password:string, reason:string) {
     if (!password.match(/[A-Z]/)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineLowercaseTag(password:string, reason:string) {
     if (!password.match(/[a-z]/)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determinePasswordTag(password:string, reason:string) {
     if (password.match(/password/i)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineNsyncTag(password:string, reason:string) {
     if (!password.match(/lance|bass|jc|chasez|joey|fatone|chris|kirkpatrick|justin|timberlake/i)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineSwearWordsTag(password:string, reason:string) {
     if (!password.match(/fuck|shit|cunt|twat|bitch|bastard|motherfucker/i)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
@@ -98,6 +133,7 @@ export class PasswordFormComponent implements OnInit {
     for (var i in password) {
       if (+password[+i+1] == +password[i]+1 && +password[+i+2] == +password[i]+2) {
         this.strengthsService.addToTempArray(reason);
+        this.passwordService.passwordStrength++;
       }
     }
   }
@@ -105,18 +141,47 @@ export class PasswordFormComponent implements OnInit {
   determineGrandFinalTag(password:string, reason:string) {
     if (!password.match(/4/)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineJesusTag(password:string, reason:string) {
     if (!password.match(/jesus|christ|lord|god|saviour|son/i)) {
       this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 
   determineRacistTag(password:string, reason:string) {
     if (password.match(/abo|aboriginal|dink|cracker|coon|nigger|chink|eyetie|wog|gyppo|injun|raghead|terrorist|tacohead|towelhead|wetback/i)) {
       this.strengthsService.addToTempArray(reason);
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determinePenisTag(password:string, reason:string) {
+    if (password.match(/penis|dick|cock|willy|prick|knob|rod|phallus|shaft|member/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineVaginaTag(password:string, reason:string) {
+    if (!password.match(/vagina|coochie|cunt|pussy|snatch|beaver|flower|peach/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineSevenTag(password:string, reason:string) {
+    if (password.match(/7/)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
     }
   }
 

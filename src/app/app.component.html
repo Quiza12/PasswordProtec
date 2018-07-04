@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="page-header">
     <h1>Get Your Password Hard 🍆</h1>
-    <p>Made by <a href="https://www.matthewquerzoli.com">Matt Querzoli</a></p>
+    <p>Erected by <a href="https://www.matthewquerzoli.com">Matt Querzoli</a></p>
   </div>
 </div>
 
@@ -17,11 +17,13 @@
     </div>
     <div class="col-sm vertical-align">
       <label>
-          <meter title="strengthMeter" min="0" max="15" value="{{getPasswordLength()}}" low="4" high="12" optimum="15"></meter>
+          <meter title="strengthMeter" min="0" max="18"
+          value="{{getPasswordStrength()}}" low="6" high="12" optimum="15"></meter>
       </label>
-      <p>Password: {{getPassword()}}</p>
-      <p>Length: {{getPasswordLength()}}</p>
-      <p>Number in List: {{getTempReasonsLength()}}</p>
+      <p>Password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
+      <p>{{getEncouragement()}}</p>
+      <!-- <p>Number in List: {{getTempReasonsLength()}}</p> -->
+      <!-- <p>Original List Number: {{getOriginalReasonsListLength()}}</p> -->
     </div>
   </div>
   <div class="row">

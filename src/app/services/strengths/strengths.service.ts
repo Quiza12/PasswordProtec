@@ -18,10 +18,12 @@ export class StrengthsService {
     { reason: "Your password does not contain any of the script of 'Lorum Ipsum'.", tag: "lorum"},
     { reason: "Your password contains zero references to Jesus, you heathen.", tag: "jesus"},
     { reason: "Your password contains racist terms. You need to check your morals more than your password.", tag: "racist"},
-    { reason: "Your password is does not contain a cryptocurrency reference like BTC, and is therefore not hip enough. #HODL", tag: "crypto"},
-    { reason: "Your password contains the word 'penis'. No wonder it's so insecure: it's short as.", tag: "penis"},
+    { reason: "Your password contains a penis. No wonder it's so insecure: it's short as.", tag: "penis"},
     { reason: "Your password does not contain a vagina. Should put one in. They're bloody (sorry) strong.", tag: "vagina"},
-    { reason: "Don't tell me your favourite number is 7? Be original. Get a new one.", tag: "seven"}
+    { reason: "Don't tell me your favourite number is 7? Be original. Get a new one.", tag: "seven"},
+    //{ reason: "", tag: "" },
+    //NEED BELOW
+    { reason: "Your password is does not contain a cryptocurrency reference like BTC, and is therefore not hip enough. #HODL", tag: "crypto"}
   ];
 
   tempReasons = [];
