@@ -61,6 +61,14 @@ export class PasswordFormComponent implements OnInit {
         case 'penis' : this.determinePenisTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'vagina' : this.determineVaginaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'seven' : this.determineSevenTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'avengers' : this.determineAvengersTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'avengersDead' : this.determineAvengersDeadTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'gel' : this.determineGelTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'genghis' : this.determineGenghisTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'wilson' : this.determineWilsonTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'love' : this.determineLoveTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'viagra' : this.determineViagraTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'prada' : this.determinePradaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
       }
     }
   }
@@ -179,6 +187,71 @@ export class PasswordFormComponent implements OnInit {
 
   determineSevenTag(password:string, reason:string) {
     if (password.match(/7/)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineAvengersTag(password:string, reason:string) {
+    if (!password.match(/Black\sPanther|Black\sWidow|Captain\sAmerica|Captain\sMarvel|Ant-Man|Ant Man|AntMan|Hawkeye|Hulk|Iron\sMan|Quicksilver|Scarlett\sWitch|Thor|Spider-man|Spiderman|Spider\sman|Vision|War\sMachine|Doctor\sStrange|Falcon/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineAvengersDeadTag(password:string, reason:string) {
+    if (password.match(/Vision|Black\sPanther|T’Challa|Spider-man|Spiderman|Spider\sman|Doctor\sStrange|Scarlett\sWitch/)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineGelTag(password:string, reason:string) {
+    if (!password.match(/Spiker\sGel|Spiker-Gel|spiker/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineGenghisTag(password:string, reason:string) {
+    if (!password.match(/Genghis\sKhan|Genghis|Khan/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineWilsonTag(password:string, reason:string) {
+    if (!password.match(/wilson/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  //TO DO MORE ON
+  determineLoveTag(password:string, reason:string) {
+    if (!password.match(/love/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineViagraTag(password:string, reason:string) {
+    if (!password.match(/viagra/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determinePradaTag(password:string, reason:string) {
+    if (!password.match(/prada/i)) {
       this.strengthsService.addToTempArray(reason);
     } else {
       this.passwordService.passwordStrength++;

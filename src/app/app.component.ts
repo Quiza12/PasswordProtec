@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   title = 'app';
   strengthReasons = [];
   tempReasons = [];
+  //topFourthReasons = [];
   password:string;
   passwordStrength:any = this.passwordService.passwordStrength;
 

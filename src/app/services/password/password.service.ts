@@ -16,6 +16,7 @@ export class PasswordService {
     this.password = newPassword;
     console.log(this.password);
   }
+  
   getData () {
     return this.password;
   }

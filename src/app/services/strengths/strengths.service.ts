@@ -21,9 +21,23 @@ export class StrengthsService {
     { reason: "Your password contains a penis. No wonder it's so insecure: it's short as.", tag: "penis"},
     { reason: "Your password does not contain a vagina. Should put one in. They're bloody (sorry) strong.", tag: "vagina"},
     { reason: "Don't tell me your favourite number is 7? Be original. Get a new one.", tag: "seven"},
+    { reason: "Chuck a cheeky Avenger in there for some more security.", tag: "avengers"},
+    { reason: "Oh boy. Your password contains the name of a dead Avenger. They're not going to be of much use. #thanosdidnothingwrong", tag: "avengersDead"},
+    { reason: "The brand of gel that Pauly D uses could help harden not just his follicles, but your password too.", tag: "gel" },
+    { reason: "Genghis Khan conquered huge chunks of central Asia and China back in the day. He'd be a good addition to your password.", tag: "genghis" },
+    { reason: "The name of the loveable volleyball companion to Tom Hanks would help keep your password from being lonely.", tag: "wilson" },
+    { reason: "Your password should also be mentally strong. Tell it you love it, no matter what.", tag: "love" },
+    { reason: "Blue magic pill? Get your password to ingest that (think less Matrix and more Pfizer).", tag: "viagra" },
+    { reason: "The Devil Wears _____ is a fantastic movie and should be referenced anywhere.", tag: "prada" }
+    //{ reason: "Go on. Chuck an emoji in there.", tag: "emoji" }
+    //{ reason: "How much does your password lift bro? 10kg? 30kg? 200kg? Never skip password day.", tag: "lift" },
+    //{ reason: "Prince Rupert has a drop of glass named after him. It's pretty strong. Chuck him in.", tag: "rupert" },
+    //{ reason: "Get a copyright symbol in there. Make it intellectually strong.", tag: "copyright" },
+    //{ reason: "Throw in a line from Die Hard. The first one. No, I'm not kidding.", tag: "diehard" },
+    //{ reason: "I'm sorry, your password contains references to known fictional villains. Best to keep them out.", tag: "villains" },
+    //{ reason: "Your password is does not contain a cryptocurrency reference like BTC, and is therefore not hip enough. #HODL", tag: "crypto"}
+
     //{ reason: "", tag: "" },
-    //NEED BELOW
-    { reason: "Your password is does not contain a cryptocurrency reference like BTC, and is therefore not hip enough. #HODL", tag: "crypto"}
   ];
 
   tempReasons = [];
