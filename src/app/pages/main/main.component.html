@@ -1,0 +1,30 @@
+<div class="container-fluid" ng-controller="PasswordInput">
+  <div class="row">
+    <div class="col-sm vertical-align">
+      <h3>Enter your password:</h3>
+    </div>
+    <div class="col-sm-4 vertical-align">
+      <div class="form-group">
+        <app-password-form></app-password-form>
+      </div>
+    </div>
+    <div class="col-sm vertical-align">
+      <label>
+          <meter title="strengthMeter" min="0" max="18"
+          value="{{getPasswordStrength()}}" low="6" high="12" optimum="15"></meter>
+      </label>
+      <p>Password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
+      <p>{{getEncouragement()}}</p>
+      <!-- <p>Number in List: {{getTempReasonsLength()}}</p> -->
+      <!-- <p>Original List Number: {{getOriginalReasonsListLength()}}</p> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <p *ngFor="let reasons of getReasonsForPassword()">
+        {{reasons}}
+      </p>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
