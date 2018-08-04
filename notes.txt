@@ -1,2 +1,3 @@
-Chuck a cheeky Avenger in there for some more security.
-  - Uh, oh. Your password contains the name of a dead Avenger. They're not going to be of much use. #thanosdidnothingwrong
+1F600-1F9C0
+1F300-1F5FF
+1F1E6-1F1FF

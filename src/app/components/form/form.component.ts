@@ -69,6 +69,9 @@ export class PasswordFormComponent implements OnInit {
         case 'love' : this.determineLoveTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'viagra' : this.determineViagraTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'prada' : this.determinePradaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'lift' : this.determineLiftTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'copyright' : this.determineCopyrightTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        //case 'emoji' : this.determineEmojiTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
       }
     }
   }
@@ -194,7 +197,7 @@ export class PasswordFormComponent implements OnInit {
   }
 
   determineAvengersTag(password:string, reason:string) {
-    if (!password.match(/Black\sPanther|Black\sWidow|Captain\sAmerica|Captain\sMarvel|Ant-Man|Ant Man|AntMan|Hawkeye|Hulk|Iron\sMan|Quicksilver|Scarlett\sWitch|Thor|Spider-man|Spiderman|Spider\sman|Vision|War\sMachine|Doctor\sStrange|Falcon/i)) {
+    if (!password.match(/Black\sPanther|BlackPanther|Black\sWidow|BlackWidow|Captain\sAmerica|CaptainAmerica|Captain\sMarvel|CaptainMarvel|Ant-Man|AntMan|AntMan|Hawkeye|Hulk|Iron\sMan|IronMan|Quicksilver|Scarlett\sWitch|ScarlettWitch|Thor|Spider-man|Spiderman|Spider\sman|Vision|War\sMachine|WarMachine|Doctor\sStrange|DoctorStrange|Falcon/i)) {
       this.strengthsService.addToTempArray(reason);
     } else {
       this.passwordService.passwordStrength++;
@@ -202,7 +205,7 @@ export class PasswordFormComponent implements OnInit {
   }
 
   determineAvengersDeadTag(password:string, reason:string) {
-    if (password.match(/Vision|Black\sPanther|T’Challa|Spider-man|Spiderman|Spider\sman|Doctor\sStrange|Scarlett\sWitch/)) {
+    if (password.match(/Vision|Black\sPanther|BlackPanther|T’Challa|Spider-man|Spiderman|Spider\sman|Doctor\sStrange|DoctorStrange|Scarlett\sWitch|ScarlettWitch/)) {
       this.strengthsService.addToTempArray(reason);
     } else {
       this.passwordService.passwordStrength++;
@@ -257,5 +260,29 @@ export class PasswordFormComponent implements OnInit {
       this.passwordService.passwordStrength++;
     }
   }
+
+  determineLiftTag(password:string, reason:string) {
+    if (!password.match(/\d+kg/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineCopyrightTag(password:string, reason:string) {
+    if (!password.match(/\u00A9/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  // determineEmojiTag(password:string, reason:string) {
+  //   if (!password.match(/[\u{1F1E6}-\u{1F1FF}]/i)) {
+  //     this.strengthsService.addToTempArray(reason);
+  //   } else {
+  //     this.passwordService.passwordStrength++;
+  //   }
+  // }
 
 }
