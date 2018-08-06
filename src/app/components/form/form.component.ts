@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PasswordService } from './../../services/password/password.service';
 import { StrengthsService } from './../../services/strengths/strengths.service';
+import { DiehardService } from './../../services/diehard/diehard.service';
 
 @Component({
   selector: 'app-password-form',
@@ -14,13 +15,17 @@ export class PasswordFormComponent implements OnInit {
   formType:string;
   hideOrShowButtonTag:string;
 
-
-  constructor(private strengthsService:StrengthsService, private passwordService:PasswordService) { }
+  constructor(
+    private strengthsService:StrengthsService,
+    private passwordService:PasswordService,
+    private diehardService:DiehardService
+  ) { }
 
   ngOnInit() {
     this.password = '';
     this.formType = 'password';
     this.hideOrShowButtonTag = 'Show';
+    console.log(this.getDieHardText());
   }
 
   showOrHidePassword() {
@@ -39,6 +44,10 @@ export class PasswordFormComponent implements OnInit {
     this.strengthsService.clearTempArray();
     this.passwordService.passwordStrength = 0;
     this.getReasonsForPassword();
+  }
+
+  getDieHardText() {
+    // this.diehardService.getDieHardText();
   }
 
   getReasonsForPassword() {
@@ -71,7 +80,7 @@ export class PasswordFormComponent implements OnInit {
         case 'prada' : this.determinePradaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'lift' : this.determineLiftTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'copyright' : this.determineCopyrightTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
-        //case 'emoji' : this.determineEmojiTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'emoji' : this.determineEmojiTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
       }
     }
   }
@@ -277,12 +286,12 @@ export class PasswordFormComponent implements OnInit {
     }
   }
 
-  // determineEmojiTag(password:string, reason:string) {
-  //   if (!password.match(/[\u{1F1E6}-\u{1F1FF}]/i)) {
-  //     this.strengthsService.addToTempArray(reason);
-  //   } else {
-  //     this.passwordService.passwordStrength++;
-  //   }
-  // }
+  determineEmojiTag(password:string, reason:string) {
+    if (!password.match(/\u{1F3AF}|\u{2196}/gu)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
 
 }

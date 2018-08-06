@@ -30,12 +30,13 @@ export class StrengthsService {
     { reason: "Blue magic pill? Get your password to ingest that (think less Matrix and more Pfizer).", tag: "viagra" },
     { reason: "The Devil Wears _____ is a fantastic movie and should be referenced anywhere.", tag: "prada" },
     { reason: "How much does your password lift, bro? 10kg? 30kg? 200kg? Never skip password day. Bro.", tag: "lift" },
-    { reason: "Get a copyright symbol in there. Make it intellectually strong.", tag: "copyright" }
-    //{ reason: "Go on. Chuck an emoji in there. ", tag: "emoji" }
+    { reason: "Get a copyright symbol in there. Make it intellectually strong.", tag: "copyright" },
+    { reason: "Go on. Chuck an emoji in there. ", tag: "emoji" }
     //{ reason: "Prince Rupert has a drop of glass named after him. It's pretty strong. Chuck him in.", tag: "rupert" },
     //{ reason: "Throw in a line from Die Hard. The first one. No, I'm not kidding.", tag: "diehard" },
     //{ reason: "I'm sorry, your password contains references to known fictional villains. Best to keep them out.", tag: "villains" },
     //{ reason: "Your password is does not contain a cryptocurrency reference like BTC, and is therefore not hip enough. #HODL", tag: "crypto"}
+    //{ reason: "Throw in a line from Die Hard. The first one. No, I'm not kidding.", tag: "diehard" },
 
     //{ reason: "", tag: "" },
   ];

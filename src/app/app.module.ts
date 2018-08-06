@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgModule } from '@angular/core';
 
@@ -8,6 +9,8 @@ import { PasswordFormComponent } from './components/form/form.component';
 
 import { StrengthsService } from './services/strengths/strengths.service';
 import { PasswordService } from './services/password/password.service';
+import { DiehardService } from './services/diehard/diehard.service';
+
 import { MainComponent } from './pages/main/main.component';
 import { AboutComponent } from './pages/about/about.component';
 import { SubmitComponent } from './pages/submit/submit.component';
@@ -33,6 +36,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(
       appRoutes,
@@ -41,7 +45,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     StrengthsService,
-    PasswordService
+    PasswordService,
+    DiehardService
   ],
   bootstrap: [AppComponent]
 })

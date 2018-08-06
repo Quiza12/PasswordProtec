@@ -71,6 +71,12 @@ export class MainComponent implements OnInit {
       return 'Oh hey, it\'s Equifax.';
     } else if ((this.password.length) >= 4 && (this.password.length) < 8) {
       return 'Better, but need to pump more iron.';
+    } else if ((this.password.length) >= 8 && (this.password.length) < 12) {
+      return 'Harder...';
+    } else if ((this.password.length) >= 12 && (this.password.length) < 16) {
+      return 'They\'ll have a hard time with this.';
+    } else if ((this.password.length) >= 16) {
+      return 'Meaty.';
     }
   }
 
