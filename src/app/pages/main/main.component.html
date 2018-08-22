@@ -15,12 +15,15 @@
       </label>
       <p>Your password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
       <p>{{getEncouragement()}}</p>
-      <!-- <p>Number in List: {{getTempReasonsLength()}}</p> -->
-      <!-- <p>Original List Number: {{getOriginalReasonsListLength()}}</p> -->
     </div>
   </div>
   <div class="row">
     <div class="col">
+      <!-- <div *ngFor="let reasons of getReasonsForPassword(); let i = index">
+        <p *ngIf="i < 9">
+          {{reasons}}
+        </p>
+      </div> -->
       <p *ngFor="let reasons of getReasonsForPassword()">
         {{reasons}}
       </p>

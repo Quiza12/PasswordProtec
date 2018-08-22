@@ -88,6 +88,9 @@ export class PasswordFormComponent implements OnInit {
         case 'garlic' : this.determineGarlicTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'kanye' : this.determineKanyeTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'oils' : this.determineOilsTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'eggs' : this.determineEggsTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'synonym' : this.determineSynonymTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'wrench' : this.determineWrenchTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
       }
     }
   }
@@ -318,6 +321,30 @@ export class PasswordFormComponent implements OnInit {
 
   determineOilsTag(password:string, reason:string) {
     if (!password.match(/onlythestrong/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineEggsTag(password:string, reason:string) {
+    if (!password.match(/eggs/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineSynonymTag(password:string, reason:string) {
+    if (password.match(/watery|washy|unaccented|light|fallible|frail|imperfect|decrepit|debile|feeble|infirm|rickety|sapless| weakly|faint|weak/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineWrenchTag(password:string, reason:string) {
+    if (!password.match(/ball/i)) {
       this.strengthsService.addToTempArray(reason);
     } else {
       this.passwordService.passwordStrength++;

@@ -31,10 +31,13 @@ export class StrengthsService {
     { reason: "The Devil Wears _____ is a fantastic movie and should be referenced anywhere.", tag: "prada" },
     { reason: "How much does your password lift, bro? 10kg? 30kg? 200kg? Never skip password day. Bro.", tag: "lift" },
     { reason: "Get a copyright symbol in there. Make it intellectually strong.", tag: "copyright" },
-    { reason: "Alright. Go on. Chuck an emoji in there.", tag: "emoji" },
+    { reason: "Alright. Go on. Chuck an emoji in there.", tag: "emoji" , website: "http://www.google.com"},
     { reason: "Garlic is strong. Hackers are pale, scrawny creatures, like vampires. Ward them off with it.", tag: "garlic" },
     { reason: "\"N-now th-that that don't kill me\" once said the infamous Kanye West. What's the next line?", tag: "kanye" },
-    { reason: "A bit of Aussie music trivia. It's the only Midnight Oil song with the word \'strong\' in the title.", tag: "oils" }
+    { reason: "A bit of Aussie music trivia. It's the only Midnight Oil song with the word \'strong\' in the title.", tag: "oils" },
+    { reason: "What did Mr Strong eat that made him so thicc?", tag: "eggs" },
+    { reason: "It seems you have slipped in a synonym for 'weak'. Purge the bad boy.", tag: "synonym" },
+    { reason: "If you can dodge a wrench you can dodge a ____. Or a hacker.", tag: "wrench" }
     // { reason: "Tell you what's hard? Pistachio shells. Nah, tell us your favourite nut.", tag: "nuts" }
     // { reason: "Prince Rupert has a drop of glass named after him. It's pretty strong. Chuck him in.", tag: "rupert" },
     // { reason: "Throw in a line from Die Hard. The first one. No, I'm not kidding.", tag: "diehard" },
