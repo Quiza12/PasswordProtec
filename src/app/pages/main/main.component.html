@@ -10,23 +10,24 @@
     </div>
     <div class="col-sm vertical-align">
       <label>
-          <meter title="strengthMeter" min="0" max="18"
-          value="{{getPasswordStrength()}}" low="6" high="12" optimum="15"></meter>
+          <meter title="strengthMeter" min="0" max="{{originalListLength}}" value="{{originalListLength - strengthListLength}}" low="12" high="22"></meter>
       </label>
       <p>Your password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
       <p>{{getEncouragement()}}</p>
+      <!-- <p>Original List Length: {{originalListLength}}</p>
+      <p>Updated List Length: {{strengthListLength}}</p> -->
     </div>
   </div>
-  <div class="row">
+  <div class="row results-collection">
     <div class="col">
-      <!-- <div *ngFor="let reasons of getReasonsForPassword(); let i = index">
+      <div *ngFor="let reasons of getReasonsForPassword(); let i = index">
         <p *ngIf="i < 9">
           {{reasons}}
         </p>
-      </div> -->
-      <p *ngFor="let reasons of getReasonsForPassword()">
+      </div>
+      <!-- <p *ngFor="let reasons of getReasonsForPassword()">
         {{reasons}}
-      </p>
+      </p> -->
     </div>
   </div>
 </div>

@@ -15,19 +15,20 @@ export class MainComponent implements OnInit {
   //topFourthReasons = [];
   password:string;
   passwordStrength:any = this.passwordService.passwordStrength;
+  strengthListLength:any;
+  originalListLength:any;
 
   constructor(private strengthsService:StrengthsService, private passwordService:PasswordService) { }
 
   ngOnInit() {
     this.strengthReasons = this.strengthsService.strengthReasons;
     this.tempReasons = this.strengthsService.tempReasons;
-  }
-
-  getOriginalReasonsListLength() {
-    return this.strengthsService.strengthReasons.length;
+    this.originalListLength = this.strengthsService.strengthReasons.length;
+    this.strengthListLength = 39;
   }
 
   getReasonsForPassword() {
+    this.strengthListLength = this.strengthsService.tempReasons.length;
     return this.strengthsService.tempReasons;
   }
 

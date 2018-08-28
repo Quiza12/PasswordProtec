@@ -91,6 +91,12 @@ export class PasswordFormComponent implements OnInit {
         case 'eggs' : this.determineEggsTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'synonym' : this.determineSynonymTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'wrench' : this.determineWrenchTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'nuts' : this.determineNutsTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'sherpa' : this.determineSherpaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'pm' : this.determinePmTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'depression' : this.determineDepressionTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        case 'whitlams' : this.determineWhitlamsTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
+        //to add lorem ipsum
       }
     }
   }
@@ -345,6 +351,46 @@ export class PasswordFormComponent implements OnInit {
 
   determineWrenchTag(password:string, reason:string) {
     if (!password.match(/ball/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineNutsTag(password:string, reason:string) {
+    if (!password.match(/almond|beech|walnut|brazil|butternut|candlenut|cashew|chestnuts|chestnut|chinkapin|cobnut|colocynth|filbert|gingko|hazelnut|heartnut|hickory|kluwak|macadamia|mamoncillo|maya|mongongo|pecan|pili|pine|pinyon|pistachio|pistacia|sapucaya|sapucia|shagbark hickory|tiger/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineSherpaTag(password:string, reason:string) {
+    if (!password.match(/sherpa/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determinePmTag(password:string, reason:string) {
+    if (!password.match(/hard|frigging|impossible|frigging impossible|friggingimpossible/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineDepressionTag(password:string, reason:string) {
+    if (!password.match(/depression|anxiety/i)) {
+      this.strengthsService.addToTempArray(reason);
+    } else {
+      this.passwordService.passwordStrength++;
+    }
+  }
+
+  determineWhitlamsTag(password:string, reason:string) {
+    if (!password.match(/loneliness/i)) {
       this.strengthsService.addToTempArray(reason);
     } else {
       this.passwordService.passwordStrength++;

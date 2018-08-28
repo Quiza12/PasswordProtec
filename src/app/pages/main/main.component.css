@@ -45,3 +45,7 @@ meter::-webkit-meter-suboptimum-value {
 meter::-webkit-meter-even-less-good-value {
     background: #FF4136;
 }
+
+.results-collection {
+  margin-bottom: 20px;
+}

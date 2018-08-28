@@ -4,18 +4,18 @@ import { Injectable } from '@angular/core';
 export class StrengthsService {
 
   strengthReasons = [
-    { reason: "Your password is not at least 8 characters long.", tag: "length"},
-    { reason: "Your password does not contain numbers.", tag: "numerics"},
-    { reason: "Your password does not contain special characters.", tag: "specialChars"},
-    { reason: "Your password does not contain any uppercase letters.", tag: "uppercase"},
-    { reason: "Your password does not contain any lowercase letters.", tag: "lowercase"},
-    { reason: "Your password quite literally contains the word 'password'. You're a dickhead.", tag: "password"},
-    { reason: "Your password does not contain the name of any NSYNC members.", tag: "nsync"},
-    { reason: "Your password does not contain any swear words.", tag: "swearWords"},
-    { reason: "Your password has a series of sequential numbers. For the love of God, fix that shit.", tag: "sequentialNumbers"},
-    { reason: "Your password does not contain the winning margin of the famous 2005 AFL Grand Final.", tag: "grandFinal"},
-    { reason: "Your password was not given enough love and attention while it was young to develop enough self-esteem to be strong later in life.", tag: "love"}, //to do
-    { reason: "Your password does not contain any of the script of 'Lorum Ipsum'.", tag: "lorum"},
+    { reason: "Your password is not at least 8 characters long.", tag: "length", hidden: false},
+    { reason: "Your password does not contain numbers.", tag: "numerics", hidden: false},
+    { reason: "Your password does not contain special characters.", tag: "specialChars", hidden: false},
+    { reason: "Your password does not contain any uppercase letters.", tag: "uppercase", hidden: false},
+    { reason: "Your password does not contain any lowercase letters.", tag: "lowercase", hidden: false},
+    { reason: "Your password quite literally contains the word 'password'. You're a dickhead.", tag: "password", hidden: true},
+    { reason: "Your password does not contain the name of any NSYNC members.", tag: "nsync", hidden: false},
+    { reason: "Your password does not contain any swear words.", tag: "swearWords", hidden: false},
+    { reason: "Your password has a series of sequential numbers. For the love of God, fix that shit.", tag: "sequentialNumbers", hidden: true},
+    { reason: "Your password does not contain the winning margin of the famous 2005 AFL Grand Final.", tag: "grandFinal", hidden: false},
+    { reason: "Your password was not given enough love and attention while it was young to develop enough self-esteem to be strong later in life.", tag: "love", hidden: false}, //to do
+    { reason: "Your password does not contain any of the script of 'Lorum Ipsum'.", tag: "lorum", hidden: false},
     { reason: "Your password contains zero references to Jesus, you heathen.", tag: "jesus"},
     { reason: "Your password contains racist terms. You need to check your morals more than your password.", tag: "racist"},
     { reason: "Your password contains a penis. No wonder it's so insecure: it's short as.", tag: "penis"},
@@ -31,21 +31,18 @@ export class StrengthsService {
     { reason: "The Devil Wears _____ is a fantastic movie and should be referenced anywhere.", tag: "prada" },
     { reason: "How much does your password lift, bro? 10kg? 30kg? 200kg? Never skip password day. Bro.", tag: "lift" },
     { reason: "Get a copyright symbol in there. Make it intellectually strong.", tag: "copyright" },
-    { reason: "Alright. Go on. Chuck an emoji in there.", tag: "emoji" , website: "http://www.google.com"},
+    { reason: "Alright. Go on. Chuck an emoji in there.", tag: "emoji" },
     { reason: "Garlic is strong. Hackers are pale, scrawny creatures, like vampires. Ward them off with it.", tag: "garlic" },
     { reason: "\"N-now th-that that don't kill me\" once said the infamous Kanye West. What's the next line?", tag: "kanye" },
     { reason: "A bit of Aussie music trivia. It's the only Midnight Oil song with the word \'strong\' in the title.", tag: "oils" },
     { reason: "What did Mr Strong eat that made him so thicc?", tag: "eggs" },
     { reason: "It seems you have slipped in a synonym for 'weak'. Purge the bad boy.", tag: "synonym" },
-    { reason: "If you can dodge a wrench you can dodge a ____. Or a hacker.", tag: "wrench" }
-    // { reason: "Tell you what's hard? Pistachio shells. Nah, tell us your favourite nut.", tag: "nuts" }
-    // { reason: "Prince Rupert has a drop of glass named after him. It's pretty strong. Chuck him in.", tag: "rupert" },
-    // { reason: "Throw in a line from Die Hard. The first one. No, I'm not kidding.", tag: "diehard" },
-    // { reason: "I'm sorry, your password contains references to known fictional villains. Best to keep them out.", tag: "villains" },
-    // { reason: "Your password is does not contain a cryptocurrency reference like BTC, and is therefore not hip enough. #HODL", tag: "crypto"}
-    // { reason: "Throw in a line from Die Hard. The first one. No, I'm not kidding.", tag: "diehard" },
-
-
+    { reason: "If you can dodge a wrench you can dodge a ____. Or a hacker.", tag: "wrench" },
+    { reason: "Tell you what's hard? Pistachio shells. Tell us your favourite nut.", tag: "nuts" },
+    { reason: "The name of the strong little men that you hire to climb Everest with you. Empahsis on you. I've no wish to do that.", tag: "sherpa" },
+    { reason: "Trivia time: How easy is it to keep a Prime Minister for a full term in office in Australia? a) Easy, b) Hard, c) Frigging impossible", tag: "pm" },
+    { reason: "It's known as the black dog. A prick to get rid of, and like your password, your approach to mental health should be equally as strong.", tag: "depression" },
+    { reason: "\"There's no aphrodisiac like...\" Like what? Possibly a hard-to-crack password. You might want to check out the Whitlams for this answer.", tag: "whitlams" }
     // { reason: "", tag: "" },
   ];
 

@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { AboutComponent } from './pages/about/about.component';
-import { SubmitComponent } from './pages/submit/submit.component';
 import { InfoComponent } from './pages/info/info.component';
 import { PasswordFormComponent } from './components/form/form.component';
 
@@ -22,7 +21,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
-  { path: 'submit', component: SubmitComponent },
   { path: 'info', component: InfoComponent },
   { path: '', component: MainComponent }
   //{ path: '**', component: PageNotFoundComponent }
@@ -33,7 +31,6 @@ const appRoutes: Routes = [
     AppComponent,
     PasswordFormComponent,
     AboutComponent,
-    SubmitComponent,
     MainComponent,
     InfoComponent,
   ],
