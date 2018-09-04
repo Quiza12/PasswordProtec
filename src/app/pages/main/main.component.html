@@ -10,12 +10,12 @@
     </div>
     <div class="col-sm vertical-align">
       <label>
-          <meter title="strengthMeter" min="0" max="{{originalListLength}}" value="{{originalListLength - strengthListLength}}" low="12" high="22"></meter>
+          <meter title="strengthMeter" min="0" max="{{strengthListLength}}" value="{{strengthListLength - tempListLength}}" low="12" high="22"></meter>
       </label>
       <p>Your password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
       <p>{{getEncouragement()}}</p>
-      <!-- <p>Original List Length: {{originalListLength}}</p>
-      <p>Updated List Length: {{strengthListLength}}</p> -->
+      <!-- <p>Temp List Length: {{tempListLength}}</p>
+      <p>Strength List Length: {{strengthListLength}}</p> -->
     </div>
   </div>
   <div class="row results-collection">

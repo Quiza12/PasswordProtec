@@ -12,23 +12,23 @@ export class MainComponent implements OnInit {
   title = 'app';
   strengthReasons = [];
   tempReasons = [];
-  //topFourthReasons = [];
   password:string;
   passwordStrength:any = this.passwordService.passwordStrength;
   strengthListLength:any;
-  originalListLength:any;
+  tempListLength:any;
 
   constructor(private strengthsService:StrengthsService, private passwordService:PasswordService) { }
 
   ngOnInit() {
+    this.strengthsService.setCountsToZero();
+    this.strengthsService.determineHiddenCount();
     this.strengthReasons = this.strengthsService.strengthReasons;
     this.tempReasons = this.strengthsService.tempReasons;
-    this.originalListLength = this.strengthsService.strengthReasons.length;
-    this.strengthListLength = 39;
+    this.strengthListLength = this.strengthsService.getHiddenFalseCount();
   }
 
   getReasonsForPassword() {
-    this.strengthListLength = this.strengthsService.tempReasons.length;
+    this.tempListLength = this.strengthsService.getTempListLength();
     return this.strengthsService.tempReasons;
   }
 
