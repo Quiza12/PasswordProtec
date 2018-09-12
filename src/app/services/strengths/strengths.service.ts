@@ -45,8 +45,12 @@ export class StrengthsService {
     { reason: "The name of the strong little men that you hire to climb Everest with you. Empahsis on you. I've no wish to do that.", tag: "sherpa", hidden: false},
     { reason: "Trivia time: How easy is it to keep a Prime Minister for a full term in office in Australia? a) Easy, b) Hard, c) Frigging impossible", tag: "pm", hidden: false},
     { reason: "It's known as the black dog. A prick to get rid of, and like your password, your approach to mental health should be equally as strong.", tag: "depression", hidden: false},
-    { reason: "\"There's no aphrodisiac like...\" Like what? Possibly a hard-to-crack password. You might want to check out the Whitlams for this answer.", tag: "whitlams", hidden: false}
-    // { reason: "", tag: "" },
+    { reason: "\"There's no aphrodisiac like...\" Like what? Possibly a hard-to-crack password. You might want to check out the Whitlams for this answer.", tag: "whitlams", hidden: false},
+    { reason: "This bone is tougher than concrete. Name it to shore your password up.", tag: "bone", hidden: false},
+    { reason: "C'mon, mate. You've put a weak base/acid in your password. Get rid of it.", tag: "acid", hidden: true},
+    { reason: "You've got a piss-weak beer called Corona in your password. Exorcise it please.", tag: "corona", hidden: true}
+    // { reason: "Include the name of a Category 5 hurricane to blow your hacker a number of kilometres off shore.", tag: "cat5", hidden: false}
+    // { reason: "", tag: "", hidden: false},
   ];
 
   tempReasons = [];

@@ -4,15 +4,38 @@
   border-radius: 4px;
   font-family: Arial;
   color: #ffff;
-  font-size: 15px;
+  font-size: 14px;
   background: #3498db;
   padding: 9px 20px 10px 20px;
   text-decoration: none;
   outline: none;
   margin-top: 10px;
+  width: 49%;
+  float: left;
 }
 
 .showPassword:hover {
   background: #3cb0fd;
+  text-decoration: none;
+}
+
+.copyPassword {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Arial;
+  color: #ffff;
+  font-size: 14px;
+  background: #0EAD69;
+  padding: 9px 20px 10px 20px;
+  text-decoration: none;
+  outline: none;
+  margin-top: 10px;
+  width: 49%;
+  float: right;
+}
+
+.copyPassword:hover {
+  background: #65CA9F;
   text-decoration: none;
 }

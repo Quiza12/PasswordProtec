@@ -24,10 +24,13 @@ export class MainComponent implements OnInit {
     this.strengthsService.determineHiddenCount();
     this.strengthReasons = this.strengthsService.strengthReasons;
     this.tempReasons = this.strengthsService.tempReasons;
-    this.strengthListLength = this.strengthsService.getHiddenFalseCount();
+    this.strengthListLength = 0;
   }
 
   getReasonsForPassword() {
+    if (this.tempListLength !== undefined) {
+      this.strengthListLength = this.strengthsService.getHiddenFalseCount();
+    }
     this.tempListLength = this.strengthsService.getTempListLength();
     return this.strengthsService.tempReasons;
   }
