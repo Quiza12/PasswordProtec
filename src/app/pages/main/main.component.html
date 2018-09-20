@@ -10,7 +10,7 @@
     </div>
     <div class="col-sm vertical-align">
       <label>
-          <meter title="strengthMeter" min="0" max="{{strengthListLength}}" value="{{strengthListLength - tempListLength}}" low="12" high="22"></meter>
+          <meter title="strengthMeter" min="0" max="{{strengthListLength}}" value="{{getPasswordStrength()}}" low="12" high="22"></meter>
       </label>
       <p>Your password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
       <p>{{getEncouragement()}}</p>

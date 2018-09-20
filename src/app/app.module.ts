@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ClipboardModule } from 'ngx-clipboard';
 
 import { NgModule } from '@angular/core';
 
@@ -9,19 +10,17 @@ import { MainComponent } from './pages/main/main.component';
 import { AboutComponent } from './pages/about/about.component';
 import { InfoComponent } from './pages/info/info.component';
 import { PasswordFormComponent } from './components/form/form.component';
+import { AnswersComponent } from './pages/answers/answers.component';
 
 import { StrengthsService } from './services/strengths/strengths.service';
 import { PasswordService } from './services/password/password.service';
-import { DiehardService } from './services/diehard/diehard.service';
 
 import { RouterModule, Routes } from '@angular/router';
-
-
-//use Angular 4 Reactive Forms
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'info', component: InfoComponent },
+  { path: 'answers', component: AnswersComponent },
   { path: '', component: MainComponent }
   //{ path: '**', component: PageNotFoundComponent }
 ];
@@ -33,11 +32,13 @@ const appRoutes: Routes = [
     AboutComponent,
     MainComponent,
     InfoComponent,
+    AnswersComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
+    ClipboardModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
@@ -45,8 +46,7 @@ const appRoutes: Routes = [
   ],
   providers: [
     StrengthsService,
-    PasswordService,
-    DiehardService
+    PasswordService
   ],
   bootstrap: [AppComponent]
 })
