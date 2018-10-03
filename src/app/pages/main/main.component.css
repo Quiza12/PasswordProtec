@@ -1,6 +1,7 @@
 input {
     width: 100%;
 }
+
 .container-fluid {
   margin-top: 30px;
 }
@@ -48,4 +49,12 @@ meter::-webkit-meter-even-less-good-value {
 
 .results-collection {
   margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 }
