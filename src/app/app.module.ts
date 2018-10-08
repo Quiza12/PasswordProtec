@@ -1,3 +1,5 @@
+import {enableProdMode} from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,6 +27,8 @@ const appRoutes: Routes = [
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
+enableProdMode();
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,8 +44,7 @@ const appRoutes: Routes = [
     FormsModule,
     ClipboardModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes
     )
   ],
   providers: [

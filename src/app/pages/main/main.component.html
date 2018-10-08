@@ -12,8 +12,10 @@
       <label>
           <meter title="strengthMeter" min="0" max="{{strengthListLength}}" value="{{getPasswordStrength()}}" low="12" high="22"></meter>
       </label>
-      <p>Your password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
-      <p>{{getEncouragement()}}</p>
+      <div class="encouragment">
+        <p>Your password is {{getPasswordLength()}} {{getCharactersString()}} long.</p>
+        <p><i>{{getEncouragement()}}</i></p>
+      </div>
     </div>
   </div>
   <div class="row results-collection">

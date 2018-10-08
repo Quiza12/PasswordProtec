@@ -7,7 +7,7 @@ input {
 }
 
 .row {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   text-align: center;
 }
 
@@ -49,12 +49,29 @@ meter::-webkit-meter-even-less-good-value {
 
 .results-collection {
   margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.encouragment {
+  display: block;
 }
 
 @media (max-width: 576px) {
   h3 {
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .container-fluid {
+    margin-top: 10px;
+  }
+
+  meter {
+    margin-top: 15px;
+  }
+
+  .encouragment {
+    display: none;
   }
 }

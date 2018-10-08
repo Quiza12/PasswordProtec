@@ -14,9 +14,8 @@ export class PasswordService {
 
   setData (newPassword) {
     this.password = newPassword;
-    console.log(this.password);
   }
-  
+
   getData () {
     return this.password;
   }
