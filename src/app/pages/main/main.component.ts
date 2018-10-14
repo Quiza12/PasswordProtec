@@ -23,9 +23,8 @@ export class MainComponent implements OnInit {
     this.strengthsService.determineHiddenCount();
     this.tempReasons = this.strengthsService.tempReasons;
     this.strengthListLength = 0;
+    this.passwordService.setData('');
   }
-
-  getStrength
 
   getReasonsForPassword() {
     if (this.tempListLength !== undefined) {

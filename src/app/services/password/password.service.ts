@@ -21,3 +21,5 @@ export class PasswordService {
   }
 
 }
+
+//this.passwordService.getData().length
