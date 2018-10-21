@@ -18,6 +18,11 @@ p {
   margin-bottom: 16px;
 }
 
+.sub-heading {
+  text-align: center;
+  display: inline-flex;
+}
+
 @media (max-width: 576px) {
   h1 {
     font-size: 30px;

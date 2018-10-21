@@ -40,6 +40,26 @@
   text-decoration: none;
 }
 
+.copyPassword:disabled {
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Arial;
+  color: #ffff;
+  font-size: 14px;
+  background: #a1a1a1;
+  padding: 9px 20px 10px 20px;
+  text-decoration: none;
+  outline: none;
+  margin-top: 10px;
+  width: 49%;
+  float: right;
+}
+
+.copyPassword:disabled:hover {
+  text-decoration: none;
+}
+
 @media (max-width: 576px) {
   .showPassword {
     -webkit-border-radius: 4;
@@ -74,12 +94,32 @@
     text-decoration: none;
     outline: none;
     margin-top: 10px;
-    width: 49%;
+    width: 100%;
     float: left;
   }
 
   .copyPassword:hover {
     background: #65CA9F;
+    text-decoration: none;
+  }
+
+  .copyPassword:disabled {
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    font-family: Arial;
+    color: #ffff;
+    font-size: 14px;
+    background: #a1a1a1;
+    padding: 9px 20px 10px 20px;
+    text-decoration: none;
+    outline: none;
+    margin-top: 10px;
+    width: 100%;
+    float: right;
+  }
+
+  .copyPassword:disabled:hover {
     text-decoration: none;
   }
 }

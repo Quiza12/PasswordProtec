@@ -8,5 +8,6 @@ name="showPasswordButton"
 <button class="copyPassword"
 type="button"
 name="copyPasswordButton"
+[disabled]="copyButtonDisabled"
 [ngxClipboard]="inputTarget"
 (cbOnSuccess)="copySuccess()">{{copiedStatus}}</button>
