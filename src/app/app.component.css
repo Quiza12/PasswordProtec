@@ -25,6 +25,10 @@ p {
 
 @media (max-width: 576px) {
   h1 {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .sub-heading {
+    display: none;
   }
 }
