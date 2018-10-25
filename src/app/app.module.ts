@@ -17,7 +17,7 @@ import { AnswersComponent } from './pages/answers/answers.component';
 import { StrengthsService } from './services/strengths/strengths.service';
 import { PasswordService } from './services/password/password.service';
 
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },

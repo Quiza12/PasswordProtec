@@ -23,6 +23,11 @@ p {
   display: inline-flex;
 }
 
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+}
+
 @media (max-width: 576px) {
   h1 {
     font-size: 28px;

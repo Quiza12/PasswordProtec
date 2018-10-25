@@ -23,6 +23,7 @@
     "@angular/router": "^7.0.0",
     "adm-zip": "^0.4.11",
     "atob": "^2.1.0",
+    "chalk": "^2.4.1",
     "core-js": "^2.5.7",
     "cryptiles": "^4.1.2",
     "hoek": "^5.0.4",
@@ -35,6 +36,7 @@
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "^7.0.0",
     "@angular/language-service": "^7.0.0",
