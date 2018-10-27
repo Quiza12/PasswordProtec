@@ -56,6 +56,12 @@ meter::-webkit-meter-even-less-good-value {
   display: block;
 }
 
+.instructions {
+  text-align: center;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
 @media (max-width: 576px) {
   h3 {
     font-size: 24px;
@@ -74,11 +80,15 @@ meter::-webkit-meter-even-less-good-value {
   .encouragment {
     display: none;
   }
+
+  .instructions {
+    text-align: center;
+  }
 }
 
 @media (max-width: 768px) {
-  h3 {
-    font-size: 24px;
+  h4 {
+    font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -93,5 +103,10 @@ meter::-webkit-meter-even-less-good-value {
 
   .encouragment {
     display: none;
+  }
+
+  .instructions {
+    text-align: center;
+    margin-bottom: 20px;
   }
 }
