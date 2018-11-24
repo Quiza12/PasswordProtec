@@ -74,7 +74,6 @@ export class PasswordFormComponent implements OnInit {
         case 'grandFinal' : this.determineGrandFinalTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'jesus' : this.determineJesusTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'racist' : this.determineRacistTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
-        //case 'crypto' : return determineCryptoTag(query);
         case 'penis' : this.determinePenisTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'vagina' : this.determineVaginaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'seven' : this.determineSevenTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
@@ -103,8 +102,6 @@ export class PasswordFormComponent implements OnInit {
         case 'bone' : this.determineBoneTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'acid' : this.determineAcidBaseTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
         case 'corona' : this.determineCoronaTag(this.password, this.strengthsService.strengthReasons[i].reason); break;
-        //case 'cat5' : this.determineCat5Tag(this.password, this.strengthsService.strengthReasons[i].reason); break;
-        //to add lorem ipsum
       }
     }
   }
@@ -214,7 +211,7 @@ export class PasswordFormComponent implements OnInit {
   }
 
   determineVaginaTag(password:string, reason:string) {
-    if (!password.match(/vagina|coochie|cunt|pussy|snatch|beaver|flower|peach|twinkie/i)) {
+    if (!password.match(/vagina|coochie|vag|cunt|pussy|snatch|beaver|flower|peach|twinkie/i)) {
       this.strengthsService.addToTempArray(reason);
     } else {
       this.passwordService.passwordStrength++;
@@ -422,14 +419,6 @@ export class PasswordFormComponent implements OnInit {
   }
 
   determineCoronaTag(password:string, reason:string) {
-    if (password.match(/corona/i)) {
-      this.strengthsService.addToTempArray(reason);
-    } else {
-      this.passwordService.passwordStrength++;
-    }
-  }
-
-  determineCat5Tag(password:string, reason:string) {
     if (password.match(/corona/i)) {
       this.strengthsService.addToTempArray(reason);
     } else {
